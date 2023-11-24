@@ -1,5 +1,4 @@
 # Insecure-WebApp-For-Security-Training
-
 # **Description**
 
 <aside>
