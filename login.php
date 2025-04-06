@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") { //to check if user is already loged i
     //$auth_query = "select group_concat(column_name) from information_schema.columns where table_schema='unsecure_weblog' and table_name='users'";
     $query_res = mysqli_query($conn, $auth_query);
 
-    if ($query_res ) { // there should be a second condtion mysqli_num_rows($query_res) == 1 to prevent from the simpelest SQLi : mamad' or 1=1#
+    if ($query_res && mysqli_num_rows($query_res) >= 1 ) { // there should be a second condtion mysqli_num_rows($query_res) == 1 to prevent from the simpelest SQLi : mamad' or 1=1#
 
         $row = mysqli_fetch_assoc($query_res);
         /*innsecure way:
